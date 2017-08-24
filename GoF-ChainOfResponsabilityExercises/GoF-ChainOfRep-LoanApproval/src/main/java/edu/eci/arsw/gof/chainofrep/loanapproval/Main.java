@@ -44,6 +44,10 @@ public class Main {
         workExp app2=new workExp();
         anualSalary app3=new anualSalary();
         
+        app1.setNext(app2);
+        app2.setNext(app3);
+        
+        
         if (app1.isApplicationDeclined(ad,outcome)){
             LOG.log(Level.INFO, "Application cannot be considered:{0}", outcome[0]);
         }

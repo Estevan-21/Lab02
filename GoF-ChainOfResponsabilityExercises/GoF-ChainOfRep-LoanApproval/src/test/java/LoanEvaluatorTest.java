@@ -1,6 +1,9 @@
 
 import edu.eci.arsw.gof.chainofrep.loanapproval.model.ApplicationDetails;
 import edu.eci.arsw.gof.chainofrep.loanapproval.model.AutomatedLoanEvaluator;
+import edu.eci.arsw.gof.chainofrep.loanapproval.model.age;
+import edu.eci.arsw.gof.chainofrep.loanapproval.model.anualSalary;
+import edu.eci.arsw.gof.chainofrep.loanapproval.model.workExp;
 import java.text.ParseException;
 import static java.time.Clock.system;
 import java.util.Calendar;
@@ -23,6 +26,7 @@ public class LoanEvaluatorTest {
     static AutomatedLoanEvaluator ale;
     static ApplicationDetails ad;
     static String outcome[];
+    
     @BeforeClass
     public static void config(){
         outcome = new String[1];
@@ -32,7 +36,10 @@ public class LoanEvaluatorTest {
                 "", "Springfield", "CA", 0, 0, 0, 0, "john123@hotmail.com", 
                 "Loan description", "IBM", 30000, 10, 2, 
                 "Officer", "342 SouthLake Av", "", "Yorktown", 
-                "VA", 3242323);    
+                "VA", 3242323); 
+        
+        
+        
     }  
     @Before
     public  void reConfig(){
@@ -43,7 +50,7 @@ public class LoanEvaluatorTest {
         ad.setDob("1995-01-01");
         ad.setWork_Ex_Year(1);
         ad.setWork_Ex_Mon(0);
-        ad.setAnn_Sal(40000);
+        ad.setAnn_Sal(40000);      
         assertFalse(ale.isApplicationDeclined(ad,outcome));
     }
     
